@@ -42,7 +42,7 @@ dados_filtrados_por_vendedores_count = dados_filtrados.groupby('Vendedor')[['Pre
 
 
 #4. DATA VISUALIZATION
-st.title(":blue[Sales Dashboard] :dart", help="This is the main title")
+st.title(":blue[Sales Dashboard] :dart", help="This is a infotip.")
 st.write("This is a demo dashboard for book sales around Brazilian territory.")
 aba1, aba2 = st.tabs(['Revenue', 'Sales staff'])
 
