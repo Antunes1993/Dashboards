@@ -53,7 +53,7 @@ with st.sidebar.expander('Product Price'):
 with st.sidebar.expander('Delivery Price'):
     delivery_preco = st.slider('Select Delivery Price:', 0, 5000, (0, 5000))    
 
-with st.sidebar.expander('Data da Compra'):
+with st.sidebar.expander('Date'):
     data_da_compra = st.date_input('Select date:', (dados_filtrados['Data da Compra'].min(), dados_filtrados['Data da Compra'].max()))
 
 with st.sidebar.expander('Salesperson'):
@@ -68,7 +68,7 @@ with st.sidebar.expander('Rate'):
 with st.sidebar.expander('Payment Type'):
     payment_type = st.multiselect('Payment Type:', dados_filtrados['Tipo de pagamento'].unique(),  dados_filtrados['Tipo de pagamento'].unique()) 
 
-with st.sidebar.expander('shares'):
+with st.sidebar.expander('Shares'):
     shares = st.slider('Select shares:', 0, 20, (0, 20))
   
 
@@ -89,8 +89,8 @@ dados_filtrados = dados_filtrados.query(query)
 dados_filtrados = dados_filtrados[colunas]
 
 st.dataframe(dados_filtrados, use_container_width=True)
-st.markdown(f'A tabela possui :blue[{dados_filtrados.shape[0]}] linhas e :blue[{dados_filtrados.shape[1]}] colunas.')
-st.markdown('Escreva o nome do arquivo:')
+st.markdown(f'The table has :blue[{dados_filtrados.shape[0]}] lines and :blue[{dados_filtrados.shape[1]}] columns.')
+st.markdown('Write filename:')
 col1, col2 = st.columns(2)
 
 with col1: 
@@ -99,3 +99,8 @@ with col1:
 
 with col2:
     st.download_button("Download Data", data=convert_csv(dados_filtrados), file_name=nome_arquivo, mime='text/csv', on_click=success_message)
+
+
+
+
+    
