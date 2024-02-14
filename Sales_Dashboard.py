@@ -44,7 +44,7 @@ dados_filtrados_por_vendedores_count = dados_filtrados.groupby('Vendedor')[['Pre
 #4. DATA VISUALIZATION
 st.title(":blue[Sales Dashboard] :dart", help="This is the main title")
 st.write("This is a demo dashboard for book sales around Brazilian territory.")
-aba1, aba2, aba3 = st.tabs(['Revenue', 'Sales', 'Sales staff'])
+aba1, aba2 = st.tabs(['Revenue', 'Sales staff'])
 
 with aba1:
 
@@ -54,7 +54,7 @@ with aba1:
     col2.plotly_chart(fig_receita_por_estados, use_container_width=True)
     col3.plotly_chart(fig_mapa_receita_por_estados, use_container_width=True)
 
-with aba3:    
+with aba2:    
     #st.dataframe(dados_filtrados, use_container_width=True)
     qtd_vendedores = st.number_input("Sales Staff", 2, 10, 5)
     fig_receita_por_vendedores = px.bar(dados_filtrados_por_vendedores['Preço'].sort_values(ascending=False).head(qtd_vendedores),
