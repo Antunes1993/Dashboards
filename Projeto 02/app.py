@@ -12,8 +12,8 @@ st.set_page_config(layout='wide', page_title='SAP Consolidation Tool', page_icon
 col1, col2 = st.columns([8, 1])
 with col1:
     st.title(":blue[SAP Consolidation Tool]")
-with col2:
-    st.image("arauco_logo.png", use_container_width=True)
+#with col2:
+    #st.image("arauco_logo.png", use_container_width=True)
 
 
 
